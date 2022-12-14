@@ -1,0 +1,183 @@
+{
+    "ALLOWED_PARAMETER_TYPES": ["string", "boolean", "password", "object"],
+    "EXCLUDE_SERVICES": ["todolist", "environment", "cloudshell", "orion", "jira", "rationalteamconcert", "githubpublic"],
+    "MAP_SERVICE_PARAMETERS_TO_TERRAFORM": {
+        "appconfig": {
+            "collection-name": "collection_name",
+            "environment-name": "environment_name",
+            "instance-name": "instance_name",
+            "resource-group": "resource_group"
+        },
+        "customtool": {
+            "lifecyclePhase": "lifecycle_phase",
+            "imageUrl": "image_url",
+            "documentationUrl": "documentation_url",
+            "additional-properties": "additional_properties"
+        },
+        "keyprotect": {
+            "instance-name": "instance_name",
+            "resource-group": "resource_group"
+        },
+        "private_worker": {
+            "workerQueueCredentials": "worker_queue_credentials",
+            "workerQueueIdentifier": "worker_queue_identifier"
+        },
+        "secretsmanager": {
+            "instance-name": "instance_name",
+            "resource-group": "resource_group"
+        }
+    },
+    "IMMUTABLE_SERVICE_PARAMETERS": {
+        "bitbucketgit": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"],
+        "github_integrated": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"],
+        "githubconsolidated": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"],
+        "githubpublic": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"],
+        "gitlab": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"],
+        "hostedgit": ["git_id", "owner_id", "repo_name", "repo_url", "source_repo_url", "type", "private_repo", "auto_init", "repo_id"]
+    },
+    "SECTION_TITLES": {
+        "customtool": "Configuring a custom tool by using the API"
+    },
+    "SERVICE_MARKDOWN_DISPLAYNAMES": {
+        "appconfig": "{{site.data.keyword.appconfig_short}}",
+        "hostedgit": "{{site.data.keyword.gitrepos}}",
+        "keyprotect": "{{site.data.keyword.keymanagementserviceshort}}",
+        "pipeline": "{{site.data.keyword.deliverypipeline}}",
+        "private_worker": "{{site.data.keyword.deliverypipeline}} Private Worker",
+        "secretsmanager": "{{site.data.keyword.secrets-manager_short}}",
+        "security_compliance": "{{site.data.keyword.compliance_short}}"
+    },
+    "SERVICE_PARAMETER_DESCRIPTIONS": {
+        "appconfig": {
+            "name": "The name of this tool integration, for example, **my-appconfig** that is displayed in your toolchain.",
+            "instance-name": "The name of your {{site.data.keyword.appconfig_short}} instance. Select an option, such as `App Configuration-01`, based on the selected region and resource group.",
+            "environment-name": "The {{site.data.keyword.appconfig_short}} environment.",
+            "collection-name": "The {{site.data.keyword.appconfig_short}} collection.",
+            "region": "The region that your toolchain resides in.",
+            "resource-group": "The resource group that contains your toolchain."
+        },
+        "artifactory": {
+            "name": "The name of this tool integration, for example, **my-artifactory** that is displayed in your toolchain.",
+            "dashboard_url": "The URL that you want to go to when you click the Artifactory card.",
+            "type": "The type of repo for your Artifactory tool integration.",
+            "user_id": "The user ID or email for your Artifactory repo.",
+            "token": "The API key for your Artifactory repo.",
+            "release_url": "The URL for your Artifactory release repo.",
+            "mirror_url": "The URL for your Artifactory virtual repo, which is a repo that can show your private repos and a cache of the public repos.",
+            "snapshot_url": "The URL for your Artifactory snapshot repo.",
+            "repository_name": "The name of the Artifactory repo where your Docker images are located.",
+            "repository_url": "The URL of the Artifactory repos where your Docker images are located."
+        },
+        "bitbucketgit": {
+            "git_id": "The ID of the Bitbucket server.",
+            "api_root_url": "The URL of the Bitbucket API, such as `https://api.bitbucket.org`.",
+            "default_branch": "The name of the default branch, for example, `main`.",
+            "owner_id": "Your Bitbucket ID.",
+            "repo_name": "The name of the Bitbucket repo to create.",
+            "repo_id": "The ID of the Bitbucket repo.",
+            "repo_url": "The URL of the repo that you want to link to.",
+            "source_repo_url": "The URL of the repo that you want to fork or clone.",
+            "token_url": "The URL of the integration token.",
+            "type": "The type of your Bitbucket repo. The allowed values are `new`, `fork`, `clone`, and `link`.",
+            "private_repo": "Set to `true` to make this repo private.",
+            "has_issues": "Set to `true` to enable Bitbucket Issues for lightweight issue tracking.",
+            "enable_traceability": "Set to `true` to track the deployment of code changes by creating tags, labels and comments on commits, pull requests, and referenced issues.",
+            "integration_owner": "The user who performs Git operations."
+        },
+        "customtool": {
+            "type": "The name of the tool that you are integrating, for example, `Delivery Pipeline`.",
+            "lifecyclePhase": "The lifecycle phase of the {{site.data.keyword.cloud_notm}} Garage Method that is the most closely associated with this tool.",
+            "imageUrl": "The URL of the icon to display on your tool integration's card.",
+            "documentationUrl": "The URL for your tool's documentation.",
+            "name": "The name for this specific tool integration, for example, `My Build and Deploy Pipeline`.",
+            "dashboard_url": "The URL that you want to go to when you click the tool integration card.",
+            "description": "A description for the tool instance.",
+            "additional-properties": "Advanced. Any information that is required to integrate with other tools in your toolchain."
+        },
+        "hashicorpvault": {
+            "name": "The name of this tool integration, for example `my-hashicorp-vault`, that is displayed in your toolchain.",
+            "server_url": "The server URL for your HashiCorp Vault instance.",
+            "authentication_method": "The authentication method for your HashiCorp Vault instance.",
+            "token": "The authentication token for your HashiCorp Vault instance.",
+            "role_id": "The authentication role ID for your HashiCorp Vault instance.",
+            "secret_id": "The authentication secret ID for your HashiCorp Vault instance.",
+            "dashboard_url": "The URL that you want to go to when you click the HashiCorp Vault integration tile.",
+            "path": "The mount path where your secrets are stored in your HashiCorp Vault instance.",
+            "secret_filter": "A regular expression that filters the list of secret names that are returned from your HashiCorp Vault instance.",
+            "default_secret": "A default secret name that is used if a list of secret names is not returned from your HashiCorp Vault instance.",
+            "username": "The authentication username for your HashiCorp Vault instance.",
+            "password": "The authentication password for your HashiCorp Vault instance."
+        },
+        "jenkins": {
+            "name": "The name for this tool integration, for example `my-jenkins`, that is displayed on your toolchain.",
+            "dashboard_url": "The URL of the Jenkins server that you want to open when you click the Jenkins card in your toolchain.",
+            "webhook_url": "The webhook to use in your Jenkins jobs to send notifications to other tools in your toolchain.",
+            "api_user_name": "The username to use with the Jenkins server's API token, which is required so that {{site.data.keyword.DRA_short}} can collect data from Jenkins. You can find your API username on the Configuration page of your Jenkins instance.",
+            "api_token": "The API token to use for Jenkins REST API calls so that {{site.data.keyword.DRA_short}} can collect data from Jenkins. You can find the API token on the Configuration page of your Jenkins instance."
+        },
+        "keyprotect": {
+            "name": "The name for this tool integration that is displayed on your toolchain.",
+            "region": "The region that your {{site.data.keyword.keymanagementserviceshort}} instance resides in.",
+            "instance-name": "The name of your {{site.data.keyword.keymanagementserviceshort}} instance, such as `Key Protect-01`, that exists within the specified region and resource group.",
+            "resource-group": "The resource group that contains your {{site.data.keyword.keymanagementserviceshort}} instance."
+        },
+        "nexus": {
+            "name": "The name of this tool integration, for example, **my-nexus** that is displayed in your toolchain.",
+            "dashboard_url": "The URL that you want to go to when you click the Nexus card.",
+            "type": "The type of repo for your Nexus tool integration.",
+            "user_id": "The user ID or email for your Nexus repo.",
+            "token": "The password or authentication token for your Nexus repo.",
+            "release_url": "The URL for your Nexus release repo.",
+            "mirror_url": "The URL for your Nexus virtual repo, which is a repo that can see your private repos and is a cache of the public repos.",
+            "snapshot_url": "The URL for your Nexus snapshot repo."
+        },
+        "pagerduty": {
+            "service_url": "The URL of the PagerDuty service to post alerts to.",
+            "service_key": "Your tool integration key. You can find or create this key in the Integrations section of the PagerDuty service page."
+        },
+        "pipeline": {
+            "name": "The name for this tool integration that is displayed on your toolchain."
+        },
+        "private_worker": {
+            "name": "The name for this tool integration, for example, `my-private-worker` that is displayed on your toolchain.",
+            "workerQueueCredentials": "A secret from the secrets store, or a service ID API key that you create, that is used by the private worker to authenticate access to the work queue.",
+            "workerQueueIdentifier": "The service ID which will be used to access the work queue."
+        },
+        "saucelabs": {
+            "username": "The user name for your Sauce Labs account.",
+            "key": "Your Sauce Labs access key. You can find your access key on your Sauce Labs account page."
+        },
+        "secretsmanager": {
+            "name": "The name for this tool integration that is displayed on your toolchain.",
+            "region": "The region that your {{site.data.keyword.secrets-manager_short}} instance resides in.",
+            "instance-name": "The name of your {{site.data.keyword.secrets-manager_short}} instance. Select an entry, for example, `Secrets Manager-01`, from the provided list that is based on the selected region and resource group.",
+            "resource-group": "The resource group that contains your {{site.data.keyword.secrets-manager_short}} instance."
+        },
+        "security_compliance": {
+            "name": "The name of this tool integration, for example `my-security-compliance`, that is displayed in your toolchain.",
+            "evidence_repo_name": "To collect and store evidence for all of the performed tasks, you must specify a Git repo as an evidence locker.",
+            "trigger_scan": "Enable trigger validation scans to provide details for a pipeline task to trigger a scan.",
+            "evidence_namespace": "The type of pipeline evidence to display in {{site.data.keyword.compliance_short}} for this toolchain. The evidence locker is searched for continuous deployment pipeline evidence or continuous compliance pipeline evidence.",
+            "api-key": "The {{site.data.keyword.cloud_notm}} API key that is used to access the {{site.data.keyword.compliance_short}} API. You can obtain your API key by using the `ibmcloud iam api-key-create` command or by clicking **Create API key** from the [console](https://cloud.ibm.com/iam#/apikeys). You can view each API key only one time.",
+            "scope": "Select an existing scope name to narrow the focus of the validation scan. For more information about scopes, see [Managing scopes](/docs/security-compliance?topic=security-compliance-scopes).",
+            "profile": "Select an existing profile, where a profile is a collection of security controls. For more information about profiles, see [What is a profile?](/docs/security-compliance?topic=security-compliance-profiles)."
+        },
+        "sonarqube": {
+            "name": "The name for this tool integration, for example, `my-sonarqube`, that is displayed on your toolchain.",
+            "dashboard_url": "The URL of the SonarQube instance that you want to open when you click the SonarQube card in your toolchain.",
+            "user_login": "If you are using an authentication token, leave this field empty.",
+            "user_password": "The password or SonarQube authentication token.",
+            "blind_connection": "Set to `true` only if the server is not addressable on the public internet. IBM Cloud cannot validate the connection details that you provide."
+        },
+        "slack": {
+            "api_token": "The Slack webhook URL that is generated by Slack as an incoming webhook. You can create or find your webhook in the Incoming Webhooks section of the [Slack API website](https://api.slack.com/incoming-webhooks){: external}. If you use an API key, update your configuration to use a webhook instead.",
+            "channel_name": "If you use a webhook, specify an existing Slack channel to post notifications to.",
+            "team_url": "If you use a webhook, specify your team name, which is the word or phrase before `.slack.com` in your team URL. For example, if your team URL is `https://team.slack.com`, your team name is `team`.",
+            "pipeline_start": "Set to 'true' if you would like to receive a Slack notification when a pipeline in the toolchain initiates a new run.",
+            "pipeline_success": "Set to 'true' if you would like to receive a Slack notification when a pipeline in the toolchain successfully completes a run.",
+            "pipeline_fail": "Set to 'true' if you would like to receive a Slack notification when a pipeline in the toolchain fails to complete a run.",
+            "toolchain_bind": "Set to 'true' if you would like to receive a Slack notification when a tool integration is added to the toolchain.",
+            "toolchain_unbind": "Set to 'true' if you would like to receive a Slack notification when a tool integration is removed from the toolchain."
+        }
+    }
+}

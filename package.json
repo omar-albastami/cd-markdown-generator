@@ -1,0 +1,15 @@
+{
+  "name": "generate_broker_tool_markdown",
+  "version": "1.0.0",
+  "description": "Generate markdown from services catalogue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omar Al Bastami <omar.albastami@ibm.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "nconf": "^0.12.0"
+  }
+}
